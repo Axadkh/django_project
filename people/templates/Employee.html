@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+<h1>
+    Employees
+    </h1>
+
+
+<div class="row">
+    {% for emp in employees %}
+        <div class="col">
+        <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="{{emp.image_url}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ emp.First_Name }} {{emp.Last_Name}}</h5>
+                <p class="card-text">Date of Birth {{emp.DateO_of_Birth}}</p>
+                 <p class="card-text">Address {{emp.Address}}</p>
+
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+</div>
+
+
+{% endblock %}
+
+</body>
+</html>
